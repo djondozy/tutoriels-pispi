@@ -41,6 +41,7 @@ video { width: 100%; max-width: 100%; aspect-ratio: 9 / 16; border-radius: 12px;
 .pages img { display: block; width: 100%; height: auto; }
 .dl { justify-self: start; font-family: var(--display); font-weight: 600; font-size: 15px; color: #fff; background: var(--blue); padding: 10px 18px; border-radius: 999px; text-decoration: none; }
 .dl:focus-visible, .pages a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+#comprendre video { max-width: 440px; margin: 0 auto; }
 footer { font-size: 13px; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .video { transition: none; } }
 </style>
@@ -50,8 +51,14 @@ footer { font-size: 13px; color: var(--muted); }
   <header>
     <span class="kicker">Ecobank Mobile · Tutoriels vidéo</span>
     <h1>Utiliser <span class="spi">PI-SPI</span> pas à pas</h1>
-    <p class="lead">Deux courtes vidéos pour créer votre alias, puis envoyer de l'argent vers une banque, MTN MoMo, Moov Money ou Celtiis Cash.</p>
+    <p class="lead">Comprenez PI-SPI, créez votre alias, puis envoyez de l'argent vers une banque, MTN MoMo, Moov Money ou Celtiis Cash.</p>
   </header>
+
+  <section class="video" id="comprendre">
+      <h2>Comment fonctionne <span class="spi">PI-SPI</span> ?</h2>
+      <p>L'alias, les frais et la sécurité expliqués simplement, en 1 minute 20.</p>
+      <video controls playsinline preload="metadata" poster="explication.jpg" src="explication.mp4"></video>
+    </section>
 
   <div class="grid">
     <section class="video" id="alias">
