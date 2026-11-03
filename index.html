@@ -32,6 +32,15 @@ video { width: 100%; max-width: 100%; aspect-ratio: 9 / 16; border-radius: 12px;
 .facts { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; display: grid; gap: 10px; }
 .facts h3 { font-family: var(--display); font-size: 16px; margin: 0; }
 .facts ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.guides { display: grid; gap: 16px; scroll-margin-top: 16px; }
+.guides > h2 { font-family: var(--display); font-weight: 800; font-size: 24px; margin: 0; }
+.guide { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.guide h3 { font-family: var(--display); font-weight: 800; font-size: 19px; margin: 0; }
+.pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.pages a { display: block; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+.pages img { display: block; width: 100%; height: auto; }
+.dl { justify-self: start; font-family: var(--display); font-weight: 600; font-size: 15px; color: #fff; background: var(--blue); padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+.dl:focus-visible, .pages a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
 footer { font-size: 13px; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .video { transition: none; } }
 </style>
@@ -59,6 +68,25 @@ footer { font-size: 13px; color: var(--muted); }
     </section>
   </div>
 
+  <section class="guides" id="parcours">
+    <h2>Parcours à imprimer</h2>
+    <div class="guide">
+      <h3>Créer votre alias (1 page)</h3>
+      <div class="pages">
+        <a href="parcours/parcours_creation_alias.jpg"><img src="parcours/parcours_creation_alias.jpg" alt="Parcours de création d'alias PI-SPI en 6 étapes" loading="lazy" width="1240" height="1754"></a>
+      </div>
+      <a class="dl" href="parcours/parcours_creation_alias.pdf">Télécharger le PDF</a>
+    </div>
+    <div class="guide">
+      <h3>Envoyer de l'argent (2 pages)</h3>
+      <div class="pages">
+        <a href="parcours/parcours_transaction_pispi_p1.jpg"><img src="parcours/parcours_transaction_pispi_p1.jpg" alt="Envoi d'argent PI-SPI, étapes 1 à 6" loading="lazy" width="1240" height="1754"></a>
+        <a href="parcours/parcours_transaction_pispi_p2.jpg"><img src="parcours/parcours_transaction_pispi_p2.jpg" alt="Envoi d'argent PI-SPI, étapes 7 à 12" loading="lazy" width="1240" height="1754"></a>
+      </div>
+      <a class="dl" href="parcours/parcours_transaction_pispi.pdf">Télécharger le PDF</a>
+    </div>
+  </section>
+
   <aside class="facts">
     <h3>Bon à savoir</h3>
     <ul>
@@ -68,14 +96,14 @@ footer { font-size: 13px; color: var(--muted); }
       <li>Ne communiquez jamais votre code PIN, même à un agent.</li>
     </ul>
   </aside>
-  <footer>Les noms et numéros visibles dans les vidéos sont fictifs.</footer>
+  <footer>Les noms et numéros visibles dans les vidéos et les parcours sont fictifs.</footer>
 </div>
 
 <script>
 function show() {
   var id = (location.hash || '').slice(1);
   var el = id && document.getElementById(id);
-  document.querySelectorAll('.video').forEach(function (v) { v.classList.toggle('focus', v === el); });
+  document.querySelectorAll('.video, .guides').forEach(function (v) { v.classList.toggle('focus', v === el); });
   if (el) el.scrollIntoView({ block: 'start' });
 }
 window.addEventListener('hashchange', show);
