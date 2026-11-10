@@ -1,0 +1,93 @@
+/* Charte Ecobank × PI-SPI : mêmes couleurs, typographie et repères que les vidéos et les affiches. */
+:root {
+  --bleu: #1670b6;        /* titres */
+  --bleu-fonce: #0c345c;  /* texte fort */
+  --gris: #4a5b6c;        /* texte courant */
+  --fond: #f3f5f8;        /* fond clair */
+  --courbe: #e7edf5;      /* grande courbe en bas de page */
+  --trait: #d6dfe9;       /* barres d'étapes à venir, bordures */
+  --jaune: #f6b000;       /* PI-SPI */
+  --vert: #2ea05a;
+  --blanc: #ffffff;
+  --police: "Montserrat", "Segoe UI", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; font-family: var(--police); color: var(--gris); font-size: 17px; line-height: 1.5;
+  background: var(--fond);
+  background-image: url("pi.png"), radial-gradient(ellipse 140% 55% at 30% 100%, var(--courbe) 0 60%, transparent 60.5%);
+  background-repeat: no-repeat; background-position: center 220px, bottom; background-size: min(760px, 120vw), 100% 900px;
+  background-attachment: scroll;
+}
+img, video { max-width: 100%; }
+.spi { color: var(--jaune); font-weight: 800; white-space: nowrap; }
+
+/* En-tête : logos | drapeaux */
+.entete { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  max-width: 1040px; margin: 0 auto; padding-block: 22px 8px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.entete .logos { height: 52px; width: auto; }
+.entete .drapeaux { height: 22px; width: auto; }
+@media (max-width: 520px) { .entete { flex-wrap: nowrap; } .entete .logos { height: 40px; } .entete .drapeaux { height: 13px; } }
+
+main { max-width: 1040px; margin: 0 auto; padding-block: 8px 48px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 56px; }
+
+/* Titre principal */
+.hero h1 { font-weight: 800; color: var(--bleu-fonce); font-size: clamp(32px, 7vw, 56px); line-height: 1.05; margin: 18px 0 10px; text-wrap: balance; }
+.hero p { margin: 0; font-size: clamp(17px, 2.6vw, 21px); max-width: 60ch; }
+
+/* Barres d'étapes (comme dans les vidéos) */
+.barres { display: grid; grid-auto-flow: column; gap: 8px; margin-top: 18px; max-width: 520px; }
+.barres span { height: 5px; border-radius: 3px; background: var(--trait); }
+.barres span.on { background: var(--bleu); }
+
+/* Titre de section : gros numéro + titre sur deux lignes */
+.titre { display: flex; align-items: flex-end; gap: 12px; margin: 0 0 6px; }
+.titre .num { font-weight: 800; font-size: clamp(56px, 11vw, 84px); line-height: .82; color: var(--bleu); letter-spacing: -2px; }
+.titre .txt { display: grid; line-height: 1.05; padding-bottom: 2px; }
+.titre .l1 { font-weight: 500; color: var(--bleu); font-size: clamp(20px, 3.6vw, 28px); }
+.titre .l2 { font-weight: 800; color: var(--bleu); font-size: clamp(24px, 4.6vw, 36px); }
+.sous { margin: 4px 0 0; font-size: 18px; }
+
+/* Encadré « légende » avec filet bleu à gauche, comme les captions */
+.legende { border-left: 4px solid var(--bleu); padding-left: 16px; }
+.legende b { display: block; color: var(--bleu); font-weight: 800; font-size: 20px; }
+
+/* Vidéos */
+.videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
+.video { display: grid; gap: 14px; align-content: start; min-width: 0; scroll-margin-top: 16px; }
+.cadre { background: #161e2a; border-radius: 38px; padding: 10px; box-shadow: 0 18px 40px rgba(12, 52, 92, .18); max-width: 400px; width: 100%; justify-self: center; }
+.cadre video { display: block; width: 100%; aspect-ratio: 9 / 16; border-radius: 30px; background: #000; }
+.video .meta { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.pastille { font-size: 14px; font-weight: 600; color: var(--bleu-fonce); background: var(--blanc); border: 1px solid var(--trait); border-radius: 999px; padding: 6px 14px; }
+.video.focus .cadre { box-shadow: 0 0 0 4px var(--jaune), 0 18px 40px rgba(12, 52, 92, .18); }
+
+/* Parcours */
+.parcours { display: grid; gap: 28px; }
+.fiche { display: grid; gap: 14px; }
+.pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.pages a { display: block; background: var(--blanc); border: 1px solid var(--trait); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 26px rgba(12, 52, 92, .10); }
+.pages img { display: block; width: 100%; height: auto; }
+.bouton { justify-self: start; display: inline-block; font-weight: 700; font-size: 16px; color: var(--blanc); background: var(--bleu); border-radius: 999px; padding: 12px 22px; text-decoration: none; }
+.bouton.clair { color: var(--bleu); background: var(--blanc); border: 2px solid var(--bleu); }
+a:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; }
+
+/* Bon à savoir */
+.savoir { background: var(--blanc); border: 1px solid var(--trait); border-radius: 22px; padding: 22px 24px; display: grid; gap: 12px; }
+.savoir h2 { margin: 0; font-size: 14px; letter-spacing: .12em; color: var(--gris); font-weight: 700; }
+.savoir ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.savoir li { display: flex; gap: 12px; align-items: baseline; color: var(--bleu-fonce); font-weight: 600; }
+.savoir li::before { content: ""; flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--jaune); transform: translateY(1px); }
+
+/* Pied de page : slogan */
+.pied { background: var(--blanc); text-align: center; padding-block: 22px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.pied .slogan { margin: 0; color: var(--bleu); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: clamp(13px, 2.4vw, 17px); }
+.pied small { display: block; margin-top: 6px; font-size: 12px; color: var(--gris); }
+.pied a { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }

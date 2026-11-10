@@ -1,63 +1,34 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>*,*::before,*::after{box-sizing:border-box}body{margin:0}</style>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Créer votre alias PI-SPI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap">
-<style>
-/* Mise en page : une colonne pensée pour le téléphone (on arrive par un QR code), deux vidéos verticales côte à côte sur grand écran. */
-:root {
-  --bg: #f2f5f9; --surface: #ffffff; --ink: #0d2a45; --muted: #55677a;
-  --blue: #005a9c; --yellow: #f5b800; --line: #dbe3ec;
-  --display: "Montserrat", "Segoe UI", Arial, sans-serif;
-  --body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0b1724; --surface: #12233a; --ink: #e8eef5; --muted: #9db0c3; --blue: #5fb0f0; --yellow: #ffc933; --line: #23384f; color-scheme: dark } }
-:root[data-theme="dark"] { --bg: #0b1724; --surface: #12233a; --ink: #e8eef5; --muted: #9db0c3; --blue: #5fb0f0; --yellow: #ffc933; --line: #23384f; color-scheme: dark }
-body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.5; }
-.wrap { max-width: 980px; margin: 0 auto; padding-block: 28px 40px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
-header { display: grid; gap: 8px; }
-.kicker { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-h1 { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 6vw, 42px); line-height: 1.1; margin: 0; text-wrap: balance; }
-.spi { color: var(--yellow); }
-.lead { margin: 0; color: var(--muted); max-width: 60ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.video { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 12px; min-width: 0; scroll-margin-top: 16px; transition: box-shadow .4s; }
-.video.focus { box-shadow: 0 0 0 3px var(--blue); }
-.video h2 { font-family: var(--display); font-weight: 800; font-size: 21px; margin: 0; text-wrap: balance; }
-.num { display: inline-block; font-family: var(--display); font-weight: 800; color: var(--blue); margin-right: 6px; }
-.video p { margin: 0; color: var(--muted); }
-video { width: 100%; max-width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; background: #000; display: block; }
-.meta { font-size: 14px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
-.facts { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; display: grid; gap: 10px; }
-.facts h3 { font-family: var(--display); font-size: 16px; margin: 0; }
-.facts ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
-.guides { display: grid; gap: 16px; scroll-margin-top: 16px; }
-.guides > h2 { font-family: var(--display); font-weight: 800; font-size: 24px; margin: 0; }
-.guide { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
-.guide h3 { font-family: var(--display); font-weight: 800; font-size: 19px; margin: 0; }
-.pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-.pages a { display: block; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
-.pages img { display: block; width: 100%; height: auto; }
-.dl { justify-self: start; font-family: var(--display); font-weight: 600; font-size: 15px; color: #fff; background: var(--blue); padding: 10px 18px; border-radius: 999px; text-decoration: none; }
-.dl:focus-visible, .pages a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
-footer { font-size: 13px; color: var(--muted); }
-@media (prefers-reduced-motion: reduce) { .video { transition: none; } }
-</style>
-</head><body>
-
-<div class="wrap">
-  <header>
-    <span class="kicker">Ecobank Mobile · Tutoriel vidéo</span>
-    <h1>Créer votre alias <span class="spi">PI-SPI</span></h1>
-  </header>
-  <section class="video focus" id="alias">
-      <h2>Créer votre alias</h2>
-      <p>Votre adresse de paiement PI-SPI, pour recevoir de l'argent sans donner votre numéro de compte.</p>
-      <video controls playsinline preload="metadata" poster="alias.jpg" src="alias.mp4"></video>
-      <div class="meta"><span>Durée : 1 min 13</span><span>Recevoir est gratuit</span></div>
-    </section>
-  <a class="dl" href="transfert.html">Voir aussi : envoyer de l'argent</a>
-  <footer>Les noms et numéros visibles dans la vidéo sont fictifs. <a href="./" style="color:inherit">Tous les tutoriels et parcours</a></footer>
-</div>
-</body></html>
+<meta name="description" content="Votre adresse de paiement : on vous envoie de l'argent sans votre numéro de compte.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/charte.css">
+</head>
+<body>
+<header class="entete">
+  <a href="./"><img class="logos" src="assets/logos.png" alt="Ecobank | PI-SPI" width="404" height="150"></a>
+  <img class="drapeaux" src="assets/drapeaux.png" alt="Pays de l'UEMOA" width="646" height="48">
+</header>
+<main>
+  <section class="video focus">
+    <h2 class="titre"><span class="num">02</span><span class="txt"><span class="l1">Créez</span><span class="l2">votre alias</span></span></h2>
+    <div class="legende"><b>Un alias, c'est quoi ?</b>Votre adresse de paiement : on vous envoie de l'argent sans votre numéro de compte.</div>
+    <div class="cadre"><video controls playsinline preload="metadata" poster="alias.jpg" src="alias.mp4"></video></div>
+      <div class="meta"><span class="pastille">1 min 13</span><span class="pastille">Recevoir est gratuit</span></div>
+  </section>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="bouton" href="transfert.html">Voir : envoyer de l'argent</a>
+    <a class="bouton clair" href="./">Tous les tutoriels et parcours</a>
+  </div>
+</main>
+<footer class="pied">
+  <p class="slogan">Un meilleur choix pour une Afrique meilleure</p>
+  <small>Les noms et numéros visibles dans les vidéos et les parcours sont fictifs.</small>
+</footer>
+</body>
+</html>
